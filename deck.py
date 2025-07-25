@@ -12,3 +12,10 @@ class Deck():
             for rank in range(1, 14):
                 card = Card(rank, suit)
                 self.deck_of_cards.append(card)
+
+    def display_deck(self):
+        for card in self.deck_of_cards:
+            card.display()
+
+deck = Deck()
+deck.display_deck()
