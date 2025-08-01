@@ -12,6 +12,15 @@ class Deck():
             for rank in range(1, 14):
                 card = Card(rank, suit)
                 self.deck_of_cards.append(card)
+                
+    def shuffle(self):
+
+        for index in range(len(self.deck_of_cards) - 1):
+            num = random.randint(index + 1, len(self.deck_of_cards) - 1)
+            temp = self.deck_of_cards[index]
+            # print("Index: {} Num: {}".format(index, num))
+            self.deck_of_cards[index] = self.deck_of_cards[num]
+            self.deck_of_cards[num] = temp
 
     def display_deck(self):
         for card in self.deck_of_cards:
