@@ -14,17 +14,24 @@ class Deck():
                 self.deck_of_cards.append(card)
                 
     def shuffle(self):
-
         for index in range(len(self.deck_of_cards) - 1):
-            num = random.randint(index + 1, len(self.deck_of_cards) - 1)
-            temp = self.deck_of_cards[index]
-            # print("Index: {} Num: {}".format(index, num))
-            self.deck_of_cards[index] = self.deck_of_cards[num]
-            self.deck_of_cards[num] = temp
+            rand_index = random.randint(index + 1, len(self.deck_of_cards) - 1)
+            current_card = self.deck_of_cards[index]
+            # print("Index: {} Num: {}".format(index, rand_index))
+            self.deck_of_cards[index] = self.deck_of_cards[rand_index]
+            self.deck_of_cards[rand_index] = current_card
+
+    def deal_cards(self, player):
+        if len(self.deck_of_cards) == 0:
+            print("There are no more cards to be dealt.")
+        else:
+            card = random.choice(self.deck_of_cards)
+            player.hand.append(card)
+            self.deck_of_cards.remove(card)
 
     def display_deck(self):
         for card in self.deck_of_cards:
             card.display()
 
-deck = Deck()
-deck.display_deck()
+# deck = Deck()
+# deck.display_deck()
