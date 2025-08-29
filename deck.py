@@ -21,7 +21,7 @@ class Deck():
             self.deck_of_cards[index] = self.deck_of_cards[rand_index]
             self.deck_of_cards[rand_index] = current_card
 
-    def deal_cards(self, player):
+    def deal_one_card(self, player):
         if len(self.deck_of_cards) == 0:
             print("There are no more cards to be dealt.")
         else:
