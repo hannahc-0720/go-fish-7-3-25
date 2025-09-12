@@ -7,6 +7,10 @@ class Player():
     def display_hand(self):
         for card in self.hand:
             card.print_card()
+    
+    def check_hand(self, ask_rank):
+        for card in self.hand:
+            pass
 
 '''
 p1 = Player("Hannah")

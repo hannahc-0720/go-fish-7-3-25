@@ -28,18 +28,14 @@ def game_test():
 
     print("Players in the Game:")
     for player in game.players:
-        print(player.name)
+        print(player.username)
+    print("")
     
-    print("Each player's hand:")
+    print("Each player's hand:\n")
     for player in game.players:
-        print(f"{player.name}'s Hand:")
+        print(f"{player.username}'s Hand:")
         for card in player.hand:
             card.display()
+        print("")
 
 game_test()
-
-# TODO TESTING: Outside of the class, create a function with the following
-# Create a gofish/game object
-# Setup the game using the new method
-# Print out the list of players
-# BONUS: Print out each player's hand to check their cards!
